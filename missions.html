@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SpaceX Exploration</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">🚀 SpaceX Exploration</div>
+    <ul class="nav-links">
+      <li><a href="home.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="missions.html">Missions</a></li>
+      <li><a href="technology.html">Technology</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+    </ul>
+  </nav>
+
+  
+
+ 
+  <div class="section dark" id="missions">
+    <h2>Recent Missions</h2>
+    <div class="cards">
+      <div class="card">
+        <img src="https://sxcontent9668.azureedge.us/cms-assets/assets/GPS_III_7_pad39a_DSC_3066_desktop_d42e3b3aa1.jpg" alt="Crew Dragon">
+        <h3>GPS III-7 Mission</h3>
+        <p> was the fourth flight for the first stage booster supporting this mission, which previously launched CRS-32, NROL-69, and a Starlink mission.</p>
+      </div>
+      <div class="card">
+        <img src="https://sxcontent9668.azureedge.us/cms-assets/assets/20251007_Starlink_10_59_Streak_DSC_00975_31a83c61e9.jpg" alt="Falcon 9">
+        <h3>Starlink Mission </h3>
+        <p>This was the eighth flight for the first stage booster supporting this mission, which previously launched CRS-33, O3b mPOWER-E, Crew-10, Bandwagon-3, O3b mPOWER-D, and now three Starlink missions. </p>
+      </div>
+      <div class="card">
+        <img src="https://sxcontent9668.azureedge.us/cms-assets/assets/IMAP_Wpondh_IMG_8198_desktop_44e34d4bf6.jpg" alt="Starship">
+        <h3>IMAP Mission</h3>
+        <p>This was the second flight for the first stage booster supporting this mission, which previously supported KF-01.</p>
+      </div>
+    </div>
+  </div>
+
+  
+  <footer>
+    <p>© 2025 SpaceX Exploration — Student Project</p>
+  </footer>
+
+  <script>
+    const sections = document.querySelectorAll('.section');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, { threshold: 0.2 });
+    sections.forEach(sec => observer.observe(sec));
+  </script>
+</body>
+</html>

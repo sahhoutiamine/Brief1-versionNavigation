@@ -1,4 +1,26 @@
 /* GLOBAL FIX */
+
+
+@font-face {
+    font-family: "SpaceNova"; /* Your custom name */
+    src: url("Spaced\ OTF.otf") format("opentype");
+    font-weight:lighter;
+    font-style: inherit;
+}
+@font-face {
+    font-family: "SpaceNovaTitle"; /* Your custom name */
+    src: url("Rostex-Oblique.otf") format("opentype");
+    font-weight:lighter;
+    font-style: inherit;
+}
+@font-face {
+    font-family: "SpaceNovaNavBar"; /* Your custom name */
+    src: url("Deltha.otf") format("opentype");
+    font-weight:lighter;
+    font-style: inherit;
+}
+
+
 *,
 *::before,
 *::after {
@@ -9,10 +31,15 @@ html, body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
-  font-family: "Poppins", sans-serif;
+  font-family: "SpaceNova", sans-serif;
   background-color: #0a0a0a;
   color: #fff;
   scroll-behavior: smooth;
+}
+
+#homeTitle {
+    font-family: "SpaceNovaTitle", sans-serif;
+
 }
 
 img { max-width: 100%; height: auto; display: block; }
@@ -24,7 +51,9 @@ img { max-width: 100%; height: auto; display: block; }
   left: 0;
   right: 0;
   padding: 15px 4vw;
-  background: rgba(0, 0, 0, 0.7);
+  height: 6%;
+  font-family: "SpaceNovaNavBar", sans-serif;
+  background: transparent;
   backdrop-filter: blur(8px);
   display: flex;
   justify-content: space-between;
@@ -57,6 +86,7 @@ img { max-width: 100%; height: auto; display: block; }
 .nav-links a:hover {
   color: #1e90ff;
   transform: translateY(-1px);
+  text-shadow: 0 0 10px #1e90ff;
 }
 
 /* BANNER */
@@ -68,7 +98,7 @@ img { max-width: 100%; height: auto; display: block; }
   align-items: center;
   text-align: center;
   position: relative;
-  margin-top: 60px; /* offset for navbar */
+  margin-top: 10px; 
 }
 
 .banner-overlay {
@@ -110,12 +140,16 @@ img { max-width: 100%; height: auto; display: block; }
 .btn:hover {
   transform: scale(1.05);
   background-color: #0c6cd4;
+  box-shadow: 0 0 15px #0c6cd4; 
 }
-
 @keyframes glow {
   from { text-shadow: 0 0 10px #1e90ff; }
   to { text-shadow: 0 0 40px #1e90ff; }
 }
+#btnFont {
+    font-family: "SpaceNovaNavBar", sans-serif;
+}
+
 
 /* SECTION STYLE */
 .section {
@@ -145,7 +179,7 @@ img { max-width: 100%; height: auto; display: block; }
 }
 
 #tech {
-  margin-top: 10%;
+  margin-top: 9%;
   
 }
 .tech-list p{

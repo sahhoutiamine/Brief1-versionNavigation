@@ -1,272 +1,299 @@
-/* GLOBAL FIX */
+/* ======================= */
+    /*        FONTS            */
+    /* ======================= */
+    @font-face {
+        font-family: "SpaceNova"; 
+        src: url("fonts/Spaced OTF.otf") format("opentype");
+        font-weight: lighter;
+        font-style: inherit;
+    }
+    @font-face {
+        font-family: "SpaceNovaTitle"; 
+        src: url("fonts/Rostex-Oblique.otf") format("opentype");
+        font-weight:lighter;
+        font-style: inherit;
+    }
+    @font-face {
+        font-family: "SpaceNovaNavBar"; 
+        src: url("fonts/Deltha.otf") format("opentype");
+        font-weight: lighter;
+        font-style: inherit;
+    }
 
+    /* ======================= */
+    /*      GLOBAL STYLES      */
+    /* ======================= */
+    *,
+    *::before,
+    *::after {
+        box-sizing: border-box;
+    }
 
-@font-face {
-    font-family: "SpaceNova"; /* Your custom name */
-    src: url("Spaced\ OTF.otf") format("opentype");
-    font-weight:lighter;
-    font-style: inherit;
-}
-@font-face {
-    font-family: "SpaceNovaTitle"; /* Your custom name */
-    src: url("Rostex-Oblique.otf") format("opentype");
-    font-weight:lighter;
-    font-style: inherit;
-}
-@font-face {
-    font-family: "SpaceNovaNavBar"; /* Your custom name */
-    src: url("Deltha.otf") format("opentype");
-    font-weight:lighter;
-    font-style: inherit;
-}
+    html, body {
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+        font-family: "SpaceNova", sans-serif;
+        background-color: #0a0a0a;
+        color: #fff;
+        scroll-behavior: smooth;
+    }
 
+    img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+    }
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
+    /* ======================= */
+    /*        NAVBAR           */
+    /* ======================= */
+    .navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        padding: 15px 4vw;
+        font-family: "SpaceNovaNavBar", sans-serif;
+        background: transparent;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 1000;
+    }
 
-html, body {
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden;
-  font-family: "SpaceNova", sans-serif;
-  background-color: #0a0a0a;
-  color: #fff;
-  scroll-behavior: smooth;
-}
+    
+    #imgLogo {
+        height: 100px;
+        width: auto;
+        margin-top: -30px;
+    }
 
-#homeTitle {
-    font-family: "SpaceNovaTitle", sans-serif;
+    .nav-links {
+        list-style: none;
+        display: flex;
+        gap: 20px;
+        margin-top: -10px;
+        padding: 0;
+    }
 
-}
+    .nav-links a {
+        color: #fff;
+        text-decoration: none;
+        padding: 8px 6px;
+        transition: color 0.25s, transform 0.15s;
+    }
 
-img { max-width: 100%; height: auto; display: block; }
+    .nav-links a:hover {
+        color: #1e90ff;
+        transform: translateY(-1px);
+        text-shadow: 0 0 10px #1e90ff;
+    }
 
-/* NAVBAR */
-.navbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  padding: 15px 4vw;
-  height: 6%;
-  font-family: "SpaceNovaNavBar", sans-serif;
-  background: transparent;
-  backdrop-filter: blur(8px);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  z-index: 1000;
-}
+    /* ======================= */
+    /*         BANNER          */
+    /* ======================= */
+    .banner {
+        position: relative;
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        overflow: hidden;
+    }
 
-.logo {
-  font-size: 1.1rem;
-  font-weight: 700;
-  color: #1e90ff;
-  white-space: nowrap;
-}
+    .banner-video {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transform: translate(-50%, -50%);
+        z-index: 0;
+    }
 
-.nav-links {
-  list-style: none;
-  display: flex;
-  gap: 20px;
-  margin: 0;
-  padding: 0;
-}
+    .banner-overlay {
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 1;
+    }
 
-.nav-links a {
-  color: #fff;
-  text-decoration: none;
-  padding: 8px 6px;
-  transition: color 0.25s, transform 0.15s;
-}
+    .banner-content {
+        position: relative;
+        z-index: 2;
+        max-width: 800px;
+        padding: 20px;
+    }
 
-.nav-links a:hover {
-  color: #1e90ff;
-  transform: translateY(-1px);
-  text-shadow: 0 0 10px #1e90ff;
-}
+    .banner-content h1 {
+        font-size: 2rem;
+        color: #fff;
+        text-shadow: 0 0 30px #1e90ff;
+        animation: glow 2s infinite alternate;
+        font-family: "SpaceNovaTitle", sans-serif;
+    }
 
-/* BANNER */
-.banner {
-  height: 90vh;
-  background: url('images/banner.jpg') center/cover fixed no-repeat;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  position: relative;
-  margin-top: 10px; 
-}
+    .banner-content p {
+        font-size: 1.1rem;
+        margin: 20px 0 30px;
+    }
+    .banner-attribution {
+        position: absolute;
+        bottom: 10px;
+        width: 100%;
+        text-align: center;
+        font-size: 0.8rem;
+        color: #ccc;
+        z-index: 2;
+    }
 
-.banner-overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.5);
-}
+    /* ======================= */
+    /*        BUTTONS          */
+    /* ======================= */
+    .btn {
+        background-color: #1e90ff;
+        color: #fff;
+        border: none;
+        padding: 12px 25px;
+        border-radius: 30px;
+        font-weight: 700;
+        text-transform: uppercase;
+        cursor: pointer;
+        transition: transform 0.25s, background 0.25s;
+        font-family: "SpaceNovaNavBar", sans-serif;
+    }
 
-.banner-content {
-  position: relative;
-  z-index: 1;
-  max-width: 800px;
-  padding: 20px;
-}
+    .btn:hover {
+        transform: scale(1.05);
+        background-color: #0c6cd4;
+        box-shadow: 0 0 15px #0c6cd4; 
+    }
 
-.banner-content h1 {
-  font-size: 3rem;
-  color: #fff;
-  text-shadow: 0 0 30px #1e90ff;
-  animation: glow 2s infinite alternate;
-}
+    @keyframes glow {
+        from { text-shadow: 0 0 10px #1e90ff; }
+        to { text-shadow: 0 0 40px #1e90ff; }
+    }
 
-.banner-content p {
-  font-size: 1.1rem;
-  margin: 20px 0 30px;
-}
+    /* ======================= */
+    /*        SECTIONS         */
+    /* ======================= */
+    .section {
+        padding: 100px 20px;
+        max-width: 1000px;
+        margin: 40px auto;
+        text-align: center;
+        opacity: 0;
+        transform: translateY(40px);
+        transition: all 0.9s ease;
+    }
 
-.btn {
-  background-color: #1e90ff;
-  color: #fff;
-  border: none;
-  padding: 12px 25px;
-  border-radius: 30px;
-  font-weight: 700;
-  text-transform: uppercase;
-  cursor: pointer;
-  transition: transform 0.25s, background 0.25s;
-}
-.btn:hover {
-  transform: scale(1.05);
-  background-color: #0c6cd4;
-  box-shadow: 0 0 15px #0c6cd4; 
-}
-@keyframes glow {
-  from { text-shadow: 0 0 10px #1e90ff; }
-  to { text-shadow: 0 0 40px #1e90ff; }
-}
-#btnFont {
-    font-family: "SpaceNovaNavBar", sans-serif;
-}
+    .section.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
 
+    .section h2 {
+        color: #1e90ff;
+        margin-bottom: 25px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+    }
 
-/* SECTION STYLE */
-.section {
-  padding: 100px 20px;
-  max-width: 1000px;
-  margin: 40px auto;
-  text-align: center;
-  opacity: 0;
-  transform: translateY(40px);
-  transition: all 0.9s ease;
-}
-.section.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
+    /* Section IDs spacing */
+    #about { margin-top: 13%; }
+    #aboutFooter { margin-top: 9%; }
+    #missions { margin-top: 6%; }
+    #tech { margin-top: 9%; }
+    #techFooter { margin-top: 5%; }
+    #gallery { margin-top: 13%; }
+    #galleryFooter { margin-top: 8%; }
 
-#about {
-  margin-top: 13%;
-}
+    .dark {
+        background-color: #111;
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
 
-#aboutFooter {
-  margin-top: 9%;
-}
+    /* ======================= */
+    /*         CARDS           */
+    /* ======================= */
+    .cards {
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+    }
 
-#missions {
-  margin-top: 6%;
-}
+    .card {
+        background: #1a1a1a;
+        border-radius: 12px;
+        width: 280px;
+        padding: 20px;
+        text-align: center;
+        transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
 
-#tech {
-  margin-top: 9%;
-  
-}
-.tech-list p{
-  text-align: center;
-}
-#techFooter {
-  margin-top: 5%;
-}
+    .card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 0 18px #1e90ff44;
+    }
 
-#gallery {
-  margin-top: 13%;
-}
-#galleryFooter {
-  margin-top: 8%;
-}
-.dark {
-  background-color: #111;
-  padding-top: 60px;
-  padding-bottom: 60px;
-}
+    /* ======================= */
+    /*          TECH           */
+    /* ======================= */
+    .tech-list {
+        text-align: left;
+        line-height: 1.8;
+        font-size: 1rem;
+        max-width: 700px;
+        margin: auto;
+    }
 
-.section h2 {
-  color: #1e90ff;
-  margin-bottom: 25px;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-}
+    .tech-list p {
+        text-align: center;
+    }
 
-/* CARDS */
-.cards {
-  padding: 0;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
-}
+    /* ======================= */
+    /*         GALLERY         */
+    /* ======================= */
+    .gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+        gap: 15px;
+    }
 
-.card {
-  background: #1a1a1a;
-  border-radius: 12px;
-  width: 280px;
-  padding: 20px;
-  text-align: center;
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
-}
-.card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 0 18px #1e90ff44;
-}
+    .gallery img {
+        border-radius: 10px;
+        transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
 
-/* TECH */
-.tech-list {
-  text-align: left;
-  line-height: 1.8;
-  font-size: 1rem;
-  max-width: 700px;
-  margin: auto;
-}
+    .gallery img:hover {
+        transform: scale(1.07);
+        box-shadow: 0 0 20px #1e90ff70;
+    }
 
-/* GALLERY */
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-  gap: 15px;
-}
-.gallery img {
-  border-radius: 10px;
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
-}
-.gallery img:hover {
-  transform: scale(1.07);
-  box-shadow: 0 0 20px #1e90ff70;
-}
+    /* ======================= */
+    /*         FOOTER          */
+    /* ======================= */
+    footer {
+        text-align: center;
+        padding: 25px 20px;
+        background-color: #000;
+        font-size: 0.9rem;
+        letter-spacing: 0.5px;
+    }
 
-/* FOOTER */
-footer {
-  text-align: center;
-  padding: 25px 20px;
-  background-color: #000;
-  font-size: 0.9rem;
-  letter-spacing: 0.5px;
-}
-
-/* RESPONSIVE */
-@media (max-width: 768px) {
-  .nav-links { display: none; }
-  .banner-content h1 { font-size: 2.2rem; }
-  .section { padding: 70px 15px; }
-  .card { width: 100%; max-width: 420px; }
-}
+    /* ======================= */
+    /*       RESPONSIVE        */
+    /* ======================= */
+    @media (max-width: 768px) {
+        .nav-links { display: none; }
+        .banner-content h1 { font-size: 2.2rem; }
+        .section { padding: 70px 15px; }
+        .card { width: 100%; max-width: 420px; }
+    }

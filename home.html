@@ -8,7 +8,9 @@
 </head>
 <body>
   <nav class="navbar">
-    <div class="logo">🚀 SpaceX Exploration</div>
+    <div class="logo">
+      <img id="imgLogo" src="images/spacexLogo.png" alt="logo">
+    </div>
     <ul class="nav-links">
       <li><a href="home.html">Home</a></li>
       <li><a href="about.html">About</a></li>
@@ -19,14 +21,24 @@
   </nav>
 
  
-  <div class="banner" id="banner">
+  <div class="banner">
+    <video class="banner-video" autoplay muted playsinline>
+        <source src="videos/bg.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
     <div class="banner-overlay"></div>
+
     <div class="banner-content">
-      <h1 id="homeTitle">Exploring the Stars</h1>
-      <p>Embark on humanity’s greatest adventure from Earth to Mars and beyond.</p>
-      <button id="btnFont" class="btn">Discover More</button>
+        <h1 id="homeTitle">Exploring the Stars</h1>
+        <p>Embark on humanity’s greatest adventure from Earth to Mars and beyond.</p>
+        <button class="btn" id="btnFont">Discover More</button>
     </div>
-  </div>
+    <div class="banner-attribution">
+      <p>© 2025 SpaceX Exploration — Student Project</p>
+    </div>
+</div>
+
 
 
   <script>

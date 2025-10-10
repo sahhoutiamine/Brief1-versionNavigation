@@ -9,7 +9,9 @@
 <body>
   
   <nav class="navbar">
-    <div class="logo">🚀 SpaceX Exploration</div>
+    <div class="logo">
+      <img id="imgLogo" src="images/spacexLogo.png" alt="logo">
+    </div>
     <ul class="nav-links">
       <li><a href="home.html">Home</a></li>
       <li><a href="about.html">About</a></li>
@@ -20,19 +22,68 @@
   </nav>
 
   
-  <div class="section dark" id="gallery">
-    <h2 id="homeTitle">Discover Space</h2>
-    <div class="gallery">
-      <img src="https://www.starlink.com/public-files/home_a_feature1_d.webp" alt="Starlink">
-      <img src="https://www.spacex.com/assets/images/vehicles/dragon/dragon_feature.jpg">
-      <img src="https://sxcontent9668.azureedge.us/cms-assets/assets/Vandy_desktop1_686164ccc7.jpg" alt="Starship Launch">
+  
+  <div class="space">
+  <div class="sun">
+    <img src="images/sun.png" alt="Sun">
+  </div>
+
+  <div class="orbit earth-orbit">
+    <div class="planet earth">
+      <img src="images/earth.png" alt="Earth">
+      
+      <div class="orbit moon-orbit">
+        <div class="planet moon">
+          <img src="images/moon.png" alt="Moon">
+        </div>
+      </div>
     </div>
-  </div> 
+  </div>
+  <div class="planet-info" id="moon-info">
+    <h3>Moon</h3>
+    <p>Earth’s companion, glowing softly as it orbits once every 27 days.</p>
+  </div>
+  <div class="planet-info" id="earth-info">
+    <h3>Earth</h3>
+    <p>Our blue planet, home to life, orbiting the Sun every 365 days.</p>
+  </div>
 
-  <footer id="galleryFooter">
+  <div class="orbit mars-orbit">
+    <div class="planet mars">
+      <img src="images/mars.png" alt="Mars">
+    </div>
+  </div>
+  <div class="planet-info" id="mars-info">
+    <h3>Mars</h3>
+    <p>The red planet, a desert world with giant volcanoes and dust storms.</p>
+  </div>
+
+  <div class="orbit jupiter-orbit">
+    <div class="planet jupiter">
+      <img src="images/jupiter.png" alt="Jupiter">
+    </div>
+  </div>
+  <div class="planet-info" id="jupiter-info">
+    <h3>Jupiter</h3>
+    <p>The largest planet, with powerful storms and swirling gas clouds.</p>
+  </div>
+</div>
+
+
+
+
+
+
+
+  <!-- <footer id="galleryFooter">
     <p>© 2025 SpaceX Exploration — Student Project</p>
-  </footer>
-
+  </footer> -->
+  
+  <!-- <div class="gallery">
+    <img src="https://www.starlink.com/public-files/home_a_feature1_d.webp" alt="Starlink">
+    <img src="https://www.spacex.com/assets/images/vehicles/dragon/dragon_feature.jpg">
+    <img src="https://sxcontent9668.azureedge.us/cms-assets/assets/Vandy_desktop1_686164ccc7.jpg" alt="Starship Launch">
+  </div> -->
   <script>
     const sections = document.querySelectorAll('.section');
     const observer = new IntersectionObserver(entries => {

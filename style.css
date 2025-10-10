@@ -151,15 +151,149 @@
         z-index: 2;
     }
 
+
+
+  .missions-section {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.8);
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+/* Background images */
+#mission1 {
+  background-image: url("images/mission1.jpg");
+}
+
+#mission2 {
+  background-image: url("images/mission2.jpg");
+}
+
+#mission3 {
+  background-image: url("images/mission3.jpg");
+}
+
+/* Overlay for readability */
+.missions-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.2));
+  z-index: 0;
+}
+
+/* TOP CENTER TITLE (h2) */
+.missions-section #homeTitle {
+  position: absolute;
+  top: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 2.5rem;
+  font-weight: bold;
+  z-index: 1;
+  text-align: center;
+}
+
+/* Bottom text group (mission name + paragraph) */
+.mission-text {
+  position: absolute;
+  bottom: 50px;
+  left: 50px;
+  max-width: 600px;
+  z-index: 1;
+}
+
+.mission-text h3 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+.mission-text p {
+  font-size: 1.1rem;
+  line-height: 1.5;
+}
+
+
+.tech-section {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.8);
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+/* Background images */
+#tech1 {
+  background-image: url("images/tech1.jpg");
+}
+
+#tech2 {
+  background-image: url("images/tech2.jpg");
+}
+
+
+
+/* Overlay for readability */
+.tech-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.2));
+  z-index: 0;
+}
+
+/* TOP CENTER TITLE (h2) */
+.tech-section #homeTitle {
+  position: absolute;
+  top: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 2.5rem;
+  font-weight: bold;
+  z-index: 1;
+  text-align: center;
+}
+
+/* Bottom text group (mission name + paragraph) */
+.tech-text {
+  position: absolute;
+  bottom: 50px;
+  left: 50px;
+  max-width: 600px;
+  z-index: 1;
+}
+
+.tech-text h3 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+.tech-text p {
+  font-size: 1.1rem;
+  line-height: 1.5;
+}
+
+
     /* ======================= */
     /*        BUTTONS          */
     /* ======================= */
     .btn {
-        background-color: #1e90ff;
+        background-color: transparent;
         color: #fff;
-        border: none;
+        border: 2px solid #1e90ff;
         padding: 12px 25px;
-        border-radius: 30px;
+        border-radius: 4px;
         font-weight: 700;
         text-transform: uppercase;
         cursor: pointer;
@@ -171,12 +305,189 @@
         transform: scale(1.05);
         background-color: #0c6cd4;
         box-shadow: 0 0 15px #0c6cd4; 
+        border: 2px solid #0c6cd4;
     }
 
     @keyframes glow {
         from { text-shadow: 0 0 10px #1e90ff; }
         to { text-shadow: 0 0 40px #1e90ff; }
     }
+
+    
+
+    /* ====== GLOBAL SPACE ====== */
+.space {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: url("images/night-sky.png") no-repeat center center/cover;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Poppins", sans-serif;
+  color: #fff;
+}
+
+/* ====== SUN ====== */
+.sun {
+  position: absolute;
+  z-index: 10;
+}
+
+.sun img {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  animation: spin 25s linear infinite;
+  box-shadow: 0 0 80px 30px rgba(255, 200, 0, 0.6);
+}
+
+/* ====== ORBITS ====== */
+.orbit {
+  position: absolute;
+  border: 1px dashed rgba(255, 255, 255, 0.08);
+  border-radius: 50%;
+  animation: orbit linear infinite;
+  transform-origin: center center;
+}
+
+/* Orbit sizes and speeds with different starting positions - MORE SPACING */
+.earth-orbit { 
+  width: 500px; 
+  height: 500px; 
+  animation-duration: 25s;
+  transform: rotate(0deg);
+}
+
+.mars-orbit { 
+  width: 750px; 
+  height: 750px; 
+  animation-duration: 35s;
+  transform: rotate(120deg);
+}
+
+.jupiter-orbit { 
+  width: 1000px; 
+  height: 1000px; 
+  animation-duration: 50s;
+  transform: rotate(240deg);
+}
+
+/* Moon orbits around Earth - positioned relative to Earth */
+.moon-orbit { 
+  width: 150px; 
+  height: 150px; 
+  animation-duration: 8s;
+  transform: rotate(0deg);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -75px;
+  margin-left: -75px;
+}
+
+/* ======================= */
+/*        PLANETS          */
+/* ======================= */
+
+.planet {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+}
+
+.planet img {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  animation: spin 20s linear infinite;
+  display: block;
+  margin: 0 auto;
+}
+
+.earth img { 
+  box-shadow: 0 0 25px 6px rgba(0, 150, 255, 0.6); 
+}
+
+.moon img { 
+  width: 40px; 
+  height: 40px; 
+  box-shadow: 0 0 15px 4px rgba(200, 200, 255, 0.4); 
+}
+
+.mars img { 
+  box-shadow: 0 0 25px 6px rgba(255, 60, 0, 0.5); 
+}
+
+.jupiter img { 
+  width: 120px; 
+  height: 120px; 
+  box-shadow: 0 0 35px 8px rgba(255, 180, 80, 0.6); 
+}
+
+.planet-info {
+  position: fixed;
+  width: 250px;
+  text-align: left;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  left: 30px;
+}
+
+#earth-info {
+  top: 100px;
+  background: rgba(35, 115, 220, 0.300);
+}
+
+#moon-info {
+  top: 240px;
+  background: rgba(100, 100, 150, 0.300);
+  width: 220px;
+}
+
+#mars-info {
+  top: 400px;
+  background: rgba(229, 69, 25, 0.3);
+}
+
+#jupiter-info {
+  top: 560px;
+  background: rgba(214, 160, 24, 0.3);
+}
+
+.planet-info h3 {
+  font-size: 1.3rem;
+  margin: 0 0 10px 0;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+  font-weight: 600;
+}
+
+.planet-info p {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  opacity: 0.9;
+  margin: 0;
+}
+
+@keyframes orbit {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+
+
+    
 
     /* ======================= */
     /*        SECTIONS         */
@@ -203,7 +514,7 @@
         letter-spacing: 2px;
     }
 
-    /* Section IDs spacing */
+    
     #about { margin-top: 13%; }
     #aboutFooter { margin-top: 9%; }
     #missions { margin-top: 6%; }
@@ -277,6 +588,8 @@
         box-shadow: 0 0 20px #1e90ff70;
     }
 
+
+
     /* ======================= */
     /*         FOOTER          */
     /* ======================= */
@@ -297,3 +610,4 @@
         .section { padding: 70px 15px; }
         .card { width: 100%; max-width: 420px; }
     }
+
